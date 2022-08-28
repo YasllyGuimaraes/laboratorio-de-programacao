@@ -11,4 +11,6 @@ int main(){
 
     printf("Idade informada: %d.\n", idade);
 
+    return 0;
+
 }
