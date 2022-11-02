@@ -3,25 +3,23 @@ também o endereço de memória onde o valor resultante dessa soma está armazen
 
 #include <stdio.h>
 
-void somar(int *px, int *py, int *ps);
 int main(){
+    int a, b, soma;
+    int *pa, *pb, *psoma;
 
-    int x, y, s;
-    int *qx = &x, *qy = &y, *qs = &s;
-    
-    printf("Digite os valores: \n");
-    //scanf("%d%d", &x, &y);
-    scanf("%d%d", qx, qy);
+    pa = &a;
+    pb = &b;
+    psoma = &soma;
 
-    //somar(&x, &y, &s);
-    somar(qx, qy, qs);
+    printf("Informe o valor de a: \n");
+    scanf("%d", pa);
 
-    //printf("O resultado de [%p] %d +[%p] %d e: [%p] %d\n"&x, &y, &s x, y, s);
-    printf("O resultado de [%p] %d +[%p] %d e: [%p] %d\n"qx, qy, qs x, y, s);
+    printf("Informe o valor de b: \n");
+    scanf("%d", pb);
+
+    *psoma = *pa + *pb;
+
+    printf("Soma: %d\nEndereco: %p\n", *psoma, psoma);
 
     return 0;
 }
-
-void somar(int *px, int *py, int *ps){
-    *ps = *px + *py;
-} 
