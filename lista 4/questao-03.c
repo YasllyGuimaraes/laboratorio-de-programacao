@@ -13,7 +13,7 @@ int main(){
         puts("Digite um numero:");
         scanf("%d", pa);
 
-        if(i==0){
+        if(i == 0){
             menor = *pa;
         }
         else if(*pa == -1){
@@ -24,7 +24,7 @@ int main(){
         }
         i++;
     }while(1);
-    
+
     printf("Menor numero: %d", menor);
 
     return 0;
