@@ -2,32 +2,26 @@
 o vetor com tipos de dados diferentes, analise os endereços. O que você observou? */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-#define TAM 15
-#define MX 100
-
-void imprimirVetor(float *pv, unsigned int qt);
+#define TAM 5
 
 int main(){
-    float v[TAM];
-
-    srand(time(NULL));
+    int vetor[TAM];
+    int *pvetor;
 
     for(int i=0; i<TAM; i++){
-        v[i] = ((float) rand()/ RAND_MAX) * (MX-1);
+        printf("Digite o valor da posicao %d:\n", i);
+        scanf("%d", &vetor[i]);
     }
 
-    imprimirVetor(v, TAM);
+    for(int i=0; i<TAM; i++){
+        printf("%d ", vetor[i]);
+    }
 
+    for(int i=0; i <TAM; i++){
+        pvetor = &vetor[i];
+        printf("\nEndereco do elemento %d: %p", i, pvetor);
+    }
+    
     return 0;
-
-
-}
-
-void imprimirVetor(float *pv, unsigned int qt){
-    for (int k=0; k<qt; k++){
-        printf("[%p] %.2f\n",pv+k, *(pv+k));
-    }
 }
